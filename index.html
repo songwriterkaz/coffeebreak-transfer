@@ -1,0 +1,24 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coffeebreak Transfer</title><link rel="icon" href="icon-192.png"><link rel="stylesheet" href="style.css"></head><body>
+<header><img src="logo.png" alt="CB" class="logo" onerror="this.outerHTML='<span class=cb>CB</span>'"><h1>Coffeebreak Transfer</h1>
+<nav><button data-t="make" class="on">Request</button><button data-t="pay">Pay</button><button data-t="hist">History</button></nav></header>
+<main>
+<section id="make" class="tab">
+<p class="note">This app never holds or moves money. It makes a request card. The payer pays in their own bank app using PayID.</p>
+<form id="f"><label>Your name<input id="n" required maxlength="40" placeholder="karen"></label>
+<label>Your PayID (email or phone)<input id="p" required maxlength="80" placeholder="karen@example.com or 0400 000 000"></label>
+<label>Amount (AUD)<input id="a" required type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="20.00"></label>
+<label>Note<input id="o" maxlength="80" placeholder="Coffee money"></label>
+<p id="err" class="err"></p><button class="big">Make request card</button></form>
+<div id="out" hidden><div id="card1"></div>
+<div class="row"><button id="cpl">Copy share link</button><button id="shr">Share</button></div>
+<input id="link" readonly><div id="qr"></div></div>
+</section>
+<section id="pay" class="tab" hidden><div id="card2"><p class="note">Open a request link to see a card here.</p></div>
+<ol class="steps"><li>Open your own bank app.</li><li>Choose Pay or Transfer, then PayID.</li><li>Paste the PayID (tap Copy PayID above).</li><li>Check the name your bank shows matches the card.</li><li>Paste the amount, add the note, and confirm.</li><li>Come back and tap Mark as paid.</li></ol>
+<button id="paid" class="big" hidden>Mark as paid</button><p id="paidmsg" class="note"></p></section>
+<section id="hist" class="tab" hidden><h2>Sent requests</h2><ul id="hs"></ul><h2>Received requests</h2><ul id="hr"></ul>
+<p class="note">History is saved only on this device.</p></section>
+</main>
+<footer>© Karen O'Brien (Coffeebreak). Karen O'Brien keeps all rights to this app, its design, name and logo. You may resell a physical phone you bought, but you may not copy this app or make your own version of it.</footer>
+<script src="qrcode.min.js"></script><script src="app.js"></script></body></html>
